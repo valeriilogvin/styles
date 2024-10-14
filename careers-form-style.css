@@ -15,7 +15,7 @@
 }
 
 :root {
-  --color-bg-primary: #08090a;
+  --color-bg-primary: rgba(255, 255, 255, 0.1);
   --color-bg-secondary: #1c1c1f;
   --color-bg-tertiary: #232326;
   --color-bg-quaternary: #28282c;
@@ -24,7 +24,7 @@
   --color-border-secondary: #34343a;
   --color-border-tertiary: #3e3e44;
 
-  --color-text-primary: #f7f8f8;
+  --color-text-primary: #fff;
   --color-text-secondary: #d0d6e0;
   --color-text-tertiary: #8a8f98;
   --color-text-quaternary: #62666d;
@@ -49,9 +49,9 @@
   /* Ashby CSS variables that we override */
   --fontFamily: "Suisse Int'l", system-ui, "Roboto", "Oxygen-Sans", "Ubuntu",
     "Cantarell", "Helvetica Neue", sans-serif;
-  --fontWeightNormal: 410;
-  --fontWeightLightBold: 510;
-  --fontWeightMediumBold: 560;
+  --fontWeightNormal: 400;
+  --fontWeightLightBold: 400;
+  --fontWeightMediumBold: 500;
   --fontWeightHeavyBold: 660;
 
   --fontSizeSmall: 13px;
@@ -62,8 +62,8 @@
   --fontSizeXxxlarge: 24px;
   --fontSizeXxxxlarge: 32px;
 
-  --borderRadiusContainer: 6px;
-  --borderRadiusControl: 6px;
+  --borderRadiusContainer: 8px;
+  --borderRadiusControl: 8px;
   --borderRadiusButton: 9999px;
   --borderRadiusCircle: 9999px;
 
@@ -113,9 +113,7 @@ body,
 #root {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-
   color: var(--label);
-  background: var(--colorAppBackground);
 }
 
 button:focus-visible:focus-visible {
@@ -123,7 +121,15 @@ button:focus-visible:focus-visible {
 }
 
 #root {
-  padding: 4px;
+  padding: 32px;
+
+  @media (width < 1024) {
+    padding: 16px;
+  }
+}
+
+body {
+  background: var(--);
 }
 
 .ashby-application-form-container button svg {
