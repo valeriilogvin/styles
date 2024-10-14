@@ -1,97 +1,144 @@
-/* stylelint-disable block-no-empty */
-/* stylelint-disable max-empty-lines */
+@font-face {
+  font-family: "Suisse Int'l";
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://restream.io/fonts/fonts/SuisseIntl-Regular-WebM.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Suisse Int'l";
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://restream.io/fonts/fonts/SuisseIntl-Medium-WebM.woff2")
+    format("woff2");
+}
 
 :root {
-  --fontFamily: "Whitney SSm", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
-    "Helvetica", "Arial", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
-  --borderRadiusContainer: 8px;
-  --borderRadiusControl: 3px;
-  --borderRadiusButton: 3px;
+  --color-bg-primary: #08090a;
+  --color-bg-secondary: #1c1c1f;
+  --color-bg-tertiary: #232326;
+  --color-bg-quaternary: #28282c;
+
+  --color-border-primary: #23252a;
+  --color-border-secondary: #34343a;
+  --color-border-tertiary: #3e3e44;
+
+  --color-text-primary: #f7f8f8;
+  --color-text-secondary: #d0d6e0;
+  --color-text-tertiary: #8a8f98;
+  --color-text-quaternary: #62666d;
+
+  --color-link-primary: #828fff;
+  --color-link-hover: #fff;
+
+  --color-brand-bg: #5e6ad2;
+  --color-brand-text: #fff;
+
+  --color-selection-bg: #474747;
+  --color-selection-text: #fff;
+  --color-selection-dim: rgba(255, 255, 255, 0.2);
+
+  --focus-ring-color: rgba(255, 255, 255, 0.4);
+
+  --color-overlay-dim-rgb: 255, 255, 255;
+  --color-overlay-primary: rgba(0, 0, 0, 0.4);
+
+  --color-alpha: 255;
+
+  /* Ashby CSS variables that we override */
+  --fontFamily: "Suisse Int'l", system-ui, "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif;
+  --fontWeightNormal: 410;
+  --fontWeightLightBold: 510;
+  --fontWeightMediumBold: 560;
+  --fontWeightHeavyBold: 660;
+
+  --fontSizeSmall: 13px;
+  --fontSizeNormal: 14px;
+  --fontSizeLarge: 16px;
+  --fontSizeXlarge: 18px;
+  --fontSizeXxlarge: 20px;
+  --fontSizeXxxlarge: 24px;
+  --fontSizeXxxxlarge: 32px;
+
+  --borderRadiusContainer: 6px;
+  --borderRadiusControl: 6px;
+  --borderRadiusButton: 9999px;
+  --borderRadiusCircle: 9999px;
+
+  --borderWidthNormal: 1px;
   --borderWidthBold: 1px;
-  --widthMaxJobBoard: 1024px;
+  --borderWidthHeavy: 1px;
 
-  /*
-     *  WARNING
-     *  If you want to add/modify you need to make sure your changes work with the
-     *  theme colors users can set in our admin section.
-     */
-  --colorAppBackground: #f7f8fa;
-  --colorPrimary900: darkorange;
-  --colorPrimary600: orange;
-  --colorNegative200: #fce8e8;
-  --colorPositive200: #eafcec;
-  --colorWarning800: #8c6d1f;
-  --colorWarning600: #f4ca64;
-  --colorNegative600: #dc3030;
-  --colorPositive600: #29b458;
-  --colorWarning900: #5c4813;
-  --color-white: #fff;
+  --colorAppBackground: var(--color-bg-primary);
+  --colorNeutral800: var(--color-text-primary);
+  --colorNeutral700: var(--color-text-secodary);
+  --colorNeutral600: var(--color-text-tertiary);
+  --colorNeutral500: var(--color-text-quaternary);
+  --colorNeutral400: var(--color-border-primary);
+  --colorNeutral300: var(--color-bg-quaternary);
+  --colorNeutral200: var(--color-bg-tertiary);
+  --colorNeutral100: var(--color-bg-secondary);
+  --colorNeutral000: var(--color-bg-primary);
 
-  --body-background-color: rgba(255, 255, 255, 0.1);
-  --body-border-color: rgba(255, 255, 255, 0.15);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --input-background: rgba(255, 255, 255, 0.04);
-  --input-color: #6e7687;
-  --button-gray-border-color: rgba(255, 255, 255, 0.15);
-  --button-gray-border-color: rgba(255, 255, 255, 0.15);
-  --button-gray-background-color: rgba(255, 255, 255, 0.1);
+  --colorPrimary000: transparent;
+  --colorPrimary600: #5e6ad2;
+  --colorPrimary900: #828fff;
+
+  --colorSecondary900: var(--focus-ring-color);
+
+  --label: var(--color-text-primary);
+  --label-muted: var(--color-text-tertiary);
+  --brand: #5e6ad2;
+  --brand-highlight: #828fff;
+  --border: var(--color-border-primary);
+  --bg: var(--color-bg-primary);
+  --bg-hover: var(--color-bg-tertiary);
+  --placeholder: var(--color-text-quaternary);
+  --selection: var(--color-selection-bg);
 }
 
-body {
-  background: transparent;
-  border-radius: var(--borderRadiusContainer);
-  border: 1px solid var(--body-border-color);
-  background: var(--body-background-color);
-  padding: 32px;
+/**
+ * Global styles
+ */
 
-  @media (width < 1024) {
-    padding: 16px;
-  }
-
-  input {
-    border-color: var(--border-color);
-    background: var(--input-background);
-    color: var(--input-color);
-
-    &::placeholder {
-      color: var(--input-color);
-    }
-  }
+::selection {
+  color: var(--label);
+  background: var(--selection);
 }
 
-.ashby-application-form-autofill-pane {
-  margin: 0;
+html,
+body,
+#root {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  color: var(--label);
+  background: var(--colorAppBackground);
 }
 
-.ashby-application-form-autofill-input-root {
-  background: transparent;
+button:focus-visible:focus-visible {
+  outline-offset: 0;
 }
+
+#root {
+  padding: 4px;
+}
+
+.ashby-application-form-container button svg {
+  fill: currentColor;
+}
+
+/**
+ * Form styles
+ */
 
 /* A container for the application form. */
 .ashby-application-form-container {
-  background-color: transparent;
+  background: none;
   box-shadow: none;
   padding: 0;
-}
-
-/* A container for the failure message */
-.ashby-application-form-failure-container {
-}
-
-/* A container for the label and input on an application form. */
-.ashby-application-form-field-entry {
-}
-
-/* The description of each question on an application form. Will only show if a description is specified. */
-.ashby-application-form-question-description {
-}
-
-/* The title of each question on an application form. */
-.ashby-application-form-question-title {
-  color: var(--color-white);
-}
-
-.ashby-application-form-question-title::after {
 }
 
 /* A single section on the Ashby application form. All questions will be wrapped in sections, though the default section may not have a title. */
@@ -100,73 +147,162 @@ body {
 
 /* The header for an application form section, possibly containing a title and description. */
 .ashby-application-form-section-header {
+  border-color: var(--border);
+  margin-bottom: 32px;
 }
 
 /* The description for an application form section. May not exist if no description was specified. */
 .ashby-application-form-section-header-description {
+  color: var(--label-muted);
 }
 
 /* The title for an application form section. May not exist for the default section. */
 .ashby-application-form-section-header-title {
-  color: darkorange;
+  color: var(--label);
+}
+
+/* A container for the label and input on an application form. */
+.ashby-application-form-field-entry {
+  margin-bottom: 32px;
+}
+
+.ashby-application-form-field-entry input[type="text"],
+.ashby-application-form-field-entry input[type="email"],
+.ashby-application-form-field-entry input[type="tel"],
+.ashby-application-form-field-entry textarea {
+  cursor: text;
+  font-weight: 400;
+  color: var(--label);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  padding: 12px 12px;
+}
+
+.ashby-application-form-field-entry input[type="text"]::placeholder,
+.ashby-application-form-field-entry input[type="email"]::placeholder,
+.ashby-application-form-field-entry input[type="tel"]::placeholder,
+.ashby-application-form-field-entry textarea::placeholder {
+  color: var(--placeholder);
+}
+
+.ashby-application-form-field-entry input[type="text"]:focus,
+.ashby-application-form-field-entry input[type="email"]:focus,
+.ashby-application-form-field-entry input[type="tel"]:focus,
+.ashby-application-form-field-entry textarea:focus {
+  border-color: var(--brand-highlight);
+}
+
+/* Upload file styling */
+.ashby-application-form-field-entry
+  input[type="file"]
+  ~ div[class*="_file"]
+  > p[class*="_name"] {
+  background: none;
+}
+
+.ashby-application-form-field-entry
+  input[type="file"]
+  ~ div[class*="_instructions"]
+  > button {
+  background: var(--bg);
+  border-color: var(--colorNeutral300);
+  color: var(--label);
+}
+
+.ashby-application-form-field-entry
+  input[type="file"]
+  ~ div[class*="_instructions"]
+  > button:hover {
+  background: var(--bg-hover);
+  box-shadow: none;
+}
+
+/* The description of each question on an application form. Will only show if a description is specified. */
+.ashby-application-form-question-description {
+  color: var(--label-muted);
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
+/* The title of each question on an application form. */
+.ashby-application-form-question-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--label);
+  margin-bottom: 12px;
+}
+
+.ashby-application-form-question-title::after {
+  margin-left: 2px;
+  color: var(--brand);
 }
 
 /* The application submission button. Will have loading and hover states that should be tested. */
 .ashby-application-form-submit-button {
+  margin-top: 48px;
+  background: var(--brand);
+  color: var(--label);
+}
+
+.ashby-application-form-submit-button svg {
+  fill: currentColor !important;
+}
+
+.loadingSvg path {
+  stroke: currentColor;
+}
+
+.loadingSvg circle {
+  display: none;
+}
+
+.ashby-application-form-submit-button:hover {
+  background: var(--brand-highlight);
+  color: var(--label);
+  box-shadow: none;
 }
 
 /* A container for the success message */
 .ashby-application-form-success-container {
+  background: none;
+  color: var(--color-text-tertiary);
+  margin: 0;
+  padding: 0;
 }
 
-/* The heading of a department, which can have many teams under it. */
-.ashby-department-heading {
+/* A container for the failure message */
+.ashby-application-form-failure-container {
+  margin: 0;
 }
 
-/* The heading of a single team. */
-.ashby-department-heading-level {
+/* Form errors container */
+/* No named class selector for this one… */
+div[role="alert"][aria-live="assertive"][data-highlight="negative"] {
+  color: var(--label);
 }
 
-/* A select box element for filtering the job board. */
-.ashby-job-board-filter {
+/* Autofill resume pane */
+.ashby-application-form-autofill-pane {
+  margin-bottom: var(--spacingLarge);
+  margin-top: 0;
 }
 
-/* The heading of the entire job board. */
-.ashby-job-board-heading {
+.ashby-application-form-autofill-input-drag-layer,
+.ashby-application-form-autofill-input-pending-layer:not([data-highlight]) {
+  background: var(--color-appBackground);
 }
 
-/* The count of job postings on the job board. */
-.ashby-job-board-heading-count {
+.ashby-application-form-autofill-input-pending-layer[data-highlight="positive"] {
+  background: var(--colorPrimary600);
+  color: var(--colorNeutral500);
 }
 
-/* The container of the job posting details pane. */
-.ashby-job-posting-brief {
+/* Hide re-captcha */
+p[class*="_recaptchaLegal"] {
+  display: none !important;
 }
 
-/* The heading of a department name. Departments group teams. */
-.ashby-job-posting-brief-department-heading {
-}
-
-/* The heading of a single team. */
-.ashby-job-posting-brief-department-heading-level {
-}
-
-/* The container for the details of the job posting, in the details pane. */
-.ashby-job-posting-brief-details {
-}
-
-/* The container for the list of job post briefings. */
-.ashby-job-posting-brief-list {
-}
-
-/* The title of the job posting in the details pane. */
-.ashby-job-posting-brief-title {
-}
-
-/* The heading of a job post */
-.ashby-job-posting-heading {
-}
-
-/* A container for any surveys specified for this application form. */
-.ashby-survey-form-container {
+/* Hide Powered by Ashby footer */
+#root footer[class*="_embedded"] {
+  display: none !important;
 }
