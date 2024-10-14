@@ -186,6 +186,7 @@ button:focus-visible:focus-visible {
   background: var(--bg);
   padding: 12px 12px;
   backdrop-filter: blur(7.5px);
+  outline: none !important;
 
   &:hover {
     border-color: var(--border-color-hover);
