@@ -71,6 +71,8 @@
   --borderWidthBold: 1px;
   --borderWidthHeavy: 1px;
 
+  --border-color: rgba(255, 255, 255, 0.1);
+
   --colorAppBackground: var(--color-bg-primary);
   --colorNeutral800: var(--color-text-primary);
   --colorNeutral700: var(--color-text-secodary);
@@ -121,10 +123,12 @@ button:focus-visible:focus-visible {
 }
 
 #root {
-  padding: 32px;
+  padding: 16px;
+}
 
-  @media (width < 1024) {
-    padding: 16px;
+@media (min-width: 1024px) {
+  #root {
+    padding: 32px;
   }
 }
 
@@ -292,6 +296,11 @@ div[role="alert"][aria-live="assertive"][data-highlight="negative"] {
 .ashby-application-form-autofill-pane {
   margin-bottom: var(--spacingLarge);
   margin-top: 0;
+}
+
+.ashby-application-form-autofill-input-root {
+  background: transparent;
+  border: var(--borderWidthNormal) solid var(--border-color);
 }
 
 .ashby-application-form-autofill-input-drag-layer,
