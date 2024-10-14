@@ -20,7 +20,7 @@
   --color-bg-tertiary: #232326;
   --color-bg-quaternary: #28282c;
 
-  --color-border-primary: #23252a;
+  --color-border-primary: rgba(255, 255, 255, 0.1);
   --color-border-secondary: #34343a;
   --color-border-tertiary: #3e3e44;
 
@@ -99,6 +99,7 @@
   --bg-hover: var(--color-bg-tertiary);
   --placeholder: var(--color-text-quaternary);
   --selection: var(--color-selection-bg);
+  --icon-color: #97a3ff;
 }
 
 /**
@@ -124,15 +125,6 @@ button:focus-visible:focus-visible {
 
 #root {
   padding: 16px;
-}
-
-@media (min-width: 1024px) {
-  #root {
-    padding: 32px;
-  }
-}
-
-body {
   background: var(--color-bg-primary);
   border-radius: var(--borderRadiusContainer);
 }
@@ -300,12 +292,18 @@ div[role="alert"][aria-live="assertive"][data-highlight="negative"] {
 
 .ashby-application-form-autofill-input-root {
   background: transparent;
-  border: var(--borderWidthNormal) solid var(--border-color);
+  border: var(--borderWidthNormal) solid var(--color-border-primary);
+}
+
+.ashby-application-form-autofill-input-base-layer {
+  svg {
+    fill: var(--icon-color);
+  }
 }
 
 .ashby-application-form-autofill-input-drag-layer,
 .ashby-application-form-autofill-input-pending-layer:not([data-highlight]) {
-  background: var(--color-appBackground);
+  background: transparent;
 }
 
 .ashby-application-form-autofill-input-pending-layer[data-highlight="positive"] {
