@@ -93,7 +93,7 @@
   --brand: #5e6ad2;
   --brand-highlight: #828fff;
   --border: var(--color-border-primary);
-  --bg: var(--color-bg-primary);
+  --bg: rgba(255, 255, 255, 0.04);
   --bg-hover: var(--color-bg-tertiary);
   --placeholder: var(--color-text-quaternary);
   --selection: var(--color-selection-bg);
@@ -129,7 +129,8 @@ button:focus-visible:focus-visible {
 }
 
 body {
-  background: var(--);
+  background: var(--color-bg-primary);
+  border-radius: var(--borderRadiusContainer);
 }
 
 .ashby-application-form-container button svg {
