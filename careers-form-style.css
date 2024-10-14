@@ -255,9 +255,22 @@ button:focus-visible:focus-visible {
 
 /* The application submission button. Will have loading and hover states that should be tested. */
 .ashby-application-form-submit-button {
-  margin-top: 48px;
+  margin-top: 24px;
   background: var(--brand);
   color: var(--label);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #6e71ff 0%, #5237ff 100%);
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.21) inset;
+  font-family: "Suisse Int'l";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  border: none !important;
+
+  & svg {
+    display: none;
+  }
 }
 
 .ashby-application-form-submit-button svg {
