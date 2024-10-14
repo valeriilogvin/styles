@@ -33,6 +33,10 @@
   --button-gray-background-color: rgba(255, 255, 255, 0.1);
 }
 
+body {
+  background: transparent;
+}
+
 .ashby-application-form-autofill-pane {
   background: var(--background-color);
   margin: 0;
