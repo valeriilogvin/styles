@@ -48,16 +48,16 @@ body {
 }
 
 .ashby-application-form-autofill-pane {
-  background: var(--background-color);
   margin: 0;
 }
 
 .ashby-application-form-autofill-input-root {
+  background: transparent;
 }
 
 /* A container for the application form. */
 .ashby-application-form-container {
-  background-color: red;
+  background-color: transparent;
   box-shadow: none;
 }
 
