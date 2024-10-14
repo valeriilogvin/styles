@@ -21,7 +21,7 @@
   --color-bg-quaternary: #28282c;
 
   --color-border-primary: rgba(255, 255, 255, 0.1);
-  --color-border-secondary: #34343a;
+  --color-border-secondary: rgba(255, 255, 255, 0.15);
   --color-border-tertiary: #3e3e44;
 
   --color-text-primary: #fff;
@@ -72,6 +72,8 @@
   --borderWidthHeavy: 1px;
 
   --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-hover: #5381ff;
+  --color-text-placeholder: #6e7687;
 
   --colorAppBackground: var(--color-bg-primary);
   --colorNeutral800: var(--color-text-primary);
@@ -82,7 +84,7 @@
   --colorNeutral300: var(--color-bg-quaternary);
   --colorNeutral200: var(--color-bg-tertiary);
   --colorNeutral100: var(--color-bg-secondary);
-  --colorNeutral000: var(--color-bg-primary);
+  --colorNeutral000: #1a1a24;
 
   --colorPrimary000: transparent;
   --colorPrimary600: #5e6ad2;
@@ -92,14 +94,14 @@
 
   --label: var(--color-text-primary);
   --label-muted: var(--color-text-tertiary);
-  --brand: #5e6ad2;
+  --brand: #97a3ff;
   --brand-highlight: #828fff;
   --border: var(--color-border-primary);
   --bg: rgba(255, 255, 255, 0.04);
   --bg-hover: var(--color-bg-tertiary);
   --placeholder: var(--color-text-quaternary);
   --selection: var(--color-selection-bg);
-  --icon-color: #97a3ff;
+  --icon-color: var(--brand);
 }
 
 /**
@@ -119,14 +121,18 @@ body,
   color: var(--label);
 }
 
-button:focus-visible:focus-visible {
-  outline-offset: 0;
+body {
+  background: transparent;
 }
 
 #root {
   padding: 16px;
   background: var(--color-bg-primary);
   border-radius: var(--borderRadiusContainer);
+}
+
+button:focus-visible:focus-visible {
+  outline-offset: 0;
 }
 
 .ashby-application-form-container button svg {
@@ -179,20 +185,25 @@ button:focus-visible:focus-visible {
   border: 1px solid var(--border);
   background: var(--bg);
   padding: 12px 12px;
+  backdrop-filter: blur(7.5px);
+
+  &:hover {
+    border-color: var(--border-color-hover);
+  }
 }
 
 .ashby-application-form-field-entry input[type="text"]::placeholder,
 .ashby-application-form-field-entry input[type="email"]::placeholder,
 .ashby-application-form-field-entry input[type="tel"]::placeholder,
 .ashby-application-form-field-entry textarea::placeholder {
-  color: var(--placeholder);
+  color: var(--color-text-placeholder);
 }
 
 .ashby-application-form-field-entry input[type="text"]:focus,
 .ashby-application-form-field-entry input[type="email"]:focus,
 .ashby-application-form-field-entry input[type="tel"]:focus,
 .ashby-application-form-field-entry textarea:focus {
-  border-color: var(--brand-highlight);
+  border-color: var(--border-color-hover);
 }
 
 /* Upload file styling */
@@ -209,6 +220,8 @@ button:focus-visible:focus-visible {
   > button {
   background: var(--bg);
   border-color: var(--colorNeutral300);
+  border-width: var(--borderWidthNormal);
+  border-style: solid;
   color: var(--label);
 }
 
@@ -288,6 +301,7 @@ div[role="alert"][aria-live="assertive"][data-highlight="negative"] {
 .ashby-application-form-autofill-pane {
   margin-bottom: var(--spacingLarge);
   margin-top: 0;
+  background: transparent;
 }
 
 .ashby-application-form-autofill-input-root {
@@ -298,6 +312,19 @@ div[role="alert"][aria-live="assertive"][data-highlight="negative"] {
 .ashby-application-form-autofill-input-base-layer {
   svg {
     fill: var(--icon-color);
+  }
+
+  button {
+    background-color: var(--color-bg-primary);
+    border-color: var(--color-border-secondary);
+    border-radius: var(--borderRadiusControl);
+    backdrop-filter: blur(7.5px);
+    padding: 8px;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
   }
 }
 
