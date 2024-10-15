@@ -179,7 +179,7 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[role="combobox"],
-textarea {
+.ashby-application-form-field-entry textarea {
   cursor: text;
   font-weight: 400;
   color: var(--label);
@@ -275,7 +275,8 @@ textarea {
     z-index: 2;
   }
 
-  &::after {
+  &:after {
+    content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
@@ -308,12 +309,6 @@ textarea {
 
 .loadingSvg circle {
   display: none;
-}
-
-.ashby-application-form-submit-button:hover {
-  background: var(--brand-highlight);
-  color: var(--label);
-  box-shadow: none;
 }
 
 /* A container for the success message */
