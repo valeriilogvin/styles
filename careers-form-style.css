@@ -175,10 +175,10 @@ button:focus-visible:focus-visible {
   margin-bottom: 32px;
 }
 
-.ashby-application-form-field-entry input[type="text"],
-.ashby-application-form-field-entry input[type="email"],
-.ashby-application-form-field-entry input[type="tel"],
-.ashby-application-form-field-entry textarea {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+ashby-application-form-field-entry textarea {
   cursor: text;
   font-weight: 400;
   color: var(--label);
@@ -262,7 +262,6 @@ button:focus-visible:focus-visible {
   border-radius: 8px;
   background: linear-gradient(180deg, #6e71ff 0%, #5237ff 100%);
   box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.21) inset;
-  font-family: "Suisse Int'l";
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -350,6 +349,11 @@ div[role="alert"][aria-live="assertive"][data-highlight="negative"] {
 .ashby-application-form-autofill-input-pending-layer[data-highlight="positive"] {
   background: var(--colorPrimary600);
   color: var(--colorNeutral500);
+}
+
+/* Hide re-captcha */
+div[class*="_resultContainer"] {
+  border-color: var(--color-border-primary);
 }
 
 /* Hide re-captcha */
