@@ -16,7 +16,7 @@
 
 :root {
   --color-bg-primary: rgba(255, 255, 255, 0.1);
-  --color-bg-primary-hover: rgba(255, 255, 255, 0.3);
+  --color-bg-primary-hover: rgba(255, 255, 255, 0.15);
   --color-bg-secondary: #1c1c1f;
   --color-bg-tertiary: #232326;
   --color-bg-quaternary: #28282c;
