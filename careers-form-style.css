@@ -221,25 +221,23 @@ input[role="combobox"],
   input[type="file"]
   ~ div[class*="_instructions"]
   > button {
-  button {
-    background-color: var(--color-bg-primary);
-    border-color: var(--color-border-secondary);
-    border-radius: var(--borderRadiusControl);
-    backdrop-filter: blur(7.5px);
-    padding: 8px;
-    color: var(--color-text-primary);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px; /* 142.857% */
-    box-shadow: none;
+  background-color: var(--color-bg-primary);
+  border-color: var(--color-border-secondary);
+  border-radius: var(--borderRadiusControl);
+  backdrop-filter: blur(7.5px);
+  padding: 8px;
+  color: var(--color-text-primary);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  box-shadow: none;
 
-    &:hover {
-      background-color: var(--color-bg-primary-hover);
-      border-color: var(--color-border-secondary);
-      box-shadow: none;
-      color: var(--color-text-primary);
-    }
+  &:hover {
+    background-color: var(--color-bg-primary-hover);
+    border-color: var(--color-border-secondary);
+    box-shadow: none;
+    color: var(--color-text-primary);
   }
 }
 
