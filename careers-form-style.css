@@ -16,6 +16,7 @@
 
 :root {
   --color-bg-primary: rgba(255, 255, 255, 0.1);
+  --color-bg-primary-hover: rgba(255, 255, 255, 0.3);
   --color-bg-secondary: #1c1c1f;
   --color-bg-tertiary: #232326;
   --color-bg-quaternary: #28282c;
@@ -220,11 +221,26 @@ input[role="combobox"],
   input[type="file"]
   ~ div[class*="_instructions"]
   > button {
-  background: var(--bg);
-  border-color: var(--colorNeutral300);
-  border-width: var(--borderWidthNormal);
-  border-style: solid;
-  color: var(--label);
+  button {
+    background-color: var(--color-bg-primary);
+    border-color: var(--color-border-secondary);
+    border-radius: var(--borderRadiusControl);
+    backdrop-filter: blur(7.5px);
+    padding: 8px;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    box-shadow: none;
+
+    &:hover {
+      background-color: var(--color-bg-primary-hover);
+      border-color: var(--color-border-secondary);
+      box-shadow: none;
+      color: var(--color-text-primary);
+    }
+  }
 }
 
 .ashby-application-form-field-entry
@@ -360,6 +376,14 @@ div[role="alert"][aria-live="assertive"][data-highlight="negative"] {
     font-style: normal;
     font-weight: 500;
     line-height: 20px; /* 142.857% */
+    box-shadow: none;
+
+    &:hover {
+      background-color: var(--color-bg-primary-hover);
+      border-color: var(--color-border-secondary);
+      box-shadow: none;
+      color: var(--color-text-primary);
+    }
   }
 }
 
