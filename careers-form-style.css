@@ -241,15 +241,11 @@ input[role="combobox"],
     border-color: var(--color-border-secondary);
     box-shadow: none;
     color: var(--color-text-primary);
-  }
-}
 
-.ashby-application-form-field-entry
-  input[type="file"]
-  ~ div[class*="_instructions"]
-  > button:hover {
-  background: var(--bg-hover);
-  box-shadow: none;
+    & svg {
+      fill: #fff;
+    }
+  }
 }
 
 /* The description of each question on an application form. Will only show if a description is specified. */
