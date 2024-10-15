@@ -127,7 +127,7 @@ body {
 }
 
 #root {
-  padding: 16px;
+  padding: 32px;
   background: var(--color-bg-primary);
   border-radius: var(--borderRadiusContainer);
 }
