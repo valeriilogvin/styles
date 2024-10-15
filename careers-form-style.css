@@ -178,7 +178,8 @@ button:focus-visible:focus-visible {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-ashby-application-form-field-entry textarea {
+input[role="combobox"],
+textarea {
   cursor: text;
   font-weight: 400;
   color: var(--label);
@@ -267,6 +268,30 @@ ashby-application-form-field-entry textarea {
   font-weight: 500;
   line-height: 20px; /* 142.857% */
   border: none !important;
+  position: relative;
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: #fff;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    background: linear-gradient(180deg, #6e71ff 0%, #5237ff 100%);
+
+    &:after {
+      opacity: 0.12;
+    }
+  }
 
   & svg {
     display: none;
