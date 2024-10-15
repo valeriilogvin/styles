@@ -185,7 +185,7 @@ input[role="combobox"],
   color: var(--label);
   border: 1px solid var(--border);
   background: var(--bg);
-  padding: 12px 12px;
+  padding: 8px 16px;
   backdrop-filter: blur(7.5px);
   outline: none !important;
 
@@ -269,6 +269,7 @@ input[role="combobox"],
   line-height: 20px; /* 142.857% */
   border: none !important;
   position: relative;
+  padding: 8px;
 
   & > * {
     position: relative;
@@ -288,6 +289,7 @@ input[role="combobox"],
 
   &:hover {
     background: linear-gradient(180deg, #6e71ff 0%, #5237ff 100%);
+    color: #fff;
 
     &:after {
       opacity: 0.12;
